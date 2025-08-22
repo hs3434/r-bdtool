@@ -4,6 +4,7 @@
 #' @param ... other arguments passed to \code{FUN}
 #' @param exclusive whether to lock exclusively, default is \code{TRUE}, passed to \code{\link[filelock]{lock}}
 #' @param timeout lock timeout in milliseconds, default is \code{5000}, passed to \code{\link[filelock]{lock}}
+#' @return the result of \code{FUN}
 #' @importFrom filelock lock unlock
 #' @export
 file_lock <- function(path, FUN, ..., exclusive = TRUE, timeout = 5000) {
