@@ -17,6 +17,9 @@ file_lock(path, FUN, ..., exclusive = TRUE, timeout = 5000)
 
 \item{timeout}{lock timeout in milliseconds, default is \code{5000}, passed to \code{\link[filelock]{lock}}}
 }
+\value{
+the result of \code{FUN}
+}
 \description{
 A safe file lock, auto unlock
 }

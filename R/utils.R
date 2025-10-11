@@ -56,7 +56,7 @@ check_vector <- function(
 create_file_dir <- function(file) {
   path <- dirname(file)
   creat_dir(path)
-  path
+  invisible(path)
 }
 
 #' create a directory, if it does not exist, have no warning
@@ -67,5 +67,5 @@ creat_dir <- function(path) {
   if (!dir.exists(path)) {
     dir.create(path, recursive = TRUE)
   }
-  path
+  invisible(path)
 }
