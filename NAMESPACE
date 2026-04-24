@@ -2,6 +2,7 @@
 
 export(assert)
 export(check_vector)
+export(cm2inch)
 export(color_map)
 export(creat_dir)
 export(create_file_dir)

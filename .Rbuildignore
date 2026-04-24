@@ -1,2 +1,4 @@
 ^mytool\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^LICENSE.md$

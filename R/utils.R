@@ -69,3 +69,9 @@ creat_dir <- function(path) {
   }
   invisible(path)
 }
+
+#' convert centimeter to inch
+#' @param cm a numeric vector of centimeter values
+#' @return a numeric vector of inch values
+#' @export
+cm2inch <- function(cm) cm / 2.54
