@@ -10,15 +10,14 @@
 file_lock <- function(path, FUN, ..., exclusive = TRUE, timeout = 5000) {
   FUN <- match.fun(FUN)
   lock_file <- paste0(path, ".lock")
-  lock <- lock(lock_file, exclusive = exclusive, timeout = timeout)
-  unlock <- unlock
-  if (is.null(lock)) {
+  lock_handle <- lock(lock_file, exclusive = exclusive, timeout = timeout)
+  if (is.null(lock_handle)) {
     stop(paste0("The file lock cannot be obtained: ", lock_file))
   } else {
     res <- tryCatch(
       forceAndCall(1, FUN, path, ...),
       error = function(e) stop(e),
-      finally = unlock(lock)
+      finally = unlock(lock_handle)
     )
   }
   invisible(res)
